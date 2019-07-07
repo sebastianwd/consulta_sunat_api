@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://mongo:27017/padron_sunat", { useNewUrlParser: true })
+  .connect("mongodb://mongo:27017/bd_sunat", { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
