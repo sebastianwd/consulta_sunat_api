@@ -32,5 +32,9 @@ COPY . .
 EXPOSE 3000
 
 # Inicia la aplicación al iniciar al contenedor
+
+# para developing
 #CMD nodemon -L --watch . index.js
+
+# production
 CMD npm start

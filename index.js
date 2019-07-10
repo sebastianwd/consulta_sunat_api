@@ -15,12 +15,6 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-/*
-app.get("/", (req, res) => {
-  Item.find()
-    .then(items => res.render("index", { items }))
-    .catch(err => res.status(404).json({ msg: "No items found" }));
-});*/
 app.get("/v1/", (req, res) => {
   var ruc = req.query.ruc;
 
@@ -30,7 +24,7 @@ app.get("/v1/", (req, res) => {
     },
     (err, person) => {
       // res.render("index", { item });
-      if (err) return res.send(500, { error: err });
+      if (err) return res.status(500).body({ error: "Invalid parameter" });
 
       var objPerson = person.toObject();
       delete objPerson._id;
