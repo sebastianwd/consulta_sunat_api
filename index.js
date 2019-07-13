@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-require("dotenv").config();
+console.log(require("dotenv").config());
 
 //Model
 const Contribuyente = require("./models/Contribuyente");
