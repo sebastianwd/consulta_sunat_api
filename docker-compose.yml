@@ -13,6 +13,7 @@ services:
       - mongo
   mongo:
     container_name: mongo
+    command: [--auth]
     image: mongo
     volumes:
       - mongodata:/data/db
