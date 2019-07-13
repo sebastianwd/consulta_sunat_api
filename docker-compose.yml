@@ -3,6 +3,9 @@ services:
   app:
     container_name: docker-node-mongo
     restart: always
+    environment:
+      - MONGODDB_USER="kodokuAdmin"
+      - MONGODB_PASSWORD="Rt4yi21f"
     volumes:
       - .:/opt/app
       - /opt/app/node_modules
