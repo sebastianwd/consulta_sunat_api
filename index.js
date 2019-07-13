@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 //Model
 const Contribuyente = require("./models/Contribuyente");
@@ -11,7 +12,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://mongo:27017/bd_sunat", { useNewUrlParser: true })
+  .connect("mongodb://mongo:27017/bd_sunat", {
+    useNewUrlParser: true,
+    auth: {
+      user: process.env.MONGODDB_USER,
+      password: process.env.MONGODB_PASSWORD
+    }
+  })
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
